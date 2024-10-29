@@ -21,6 +21,12 @@ ${getLicenseBadge(data.license)}
 ## Description
 ${data.description}
 
+### User Story
+${data.userStory}
+
+### Acceptance Criteria
+${data.acceptanceCriteria}
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
