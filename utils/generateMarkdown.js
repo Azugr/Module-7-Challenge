@@ -1,31 +1,48 @@
-// Function to generate the license badge
-function getLicenseBadge(license) {
-  if (license === 'MIT') {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-  } else if (license === 'Apache 2.0') {
-    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-  } else if (license === 'GPL 3.0') {
-    return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-  } else if (license === 'BSD 3-Clause') {
-    return `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`;
+// Function that returns a license badge based on the license selected
+// If there is no license, it returns an empty string
+function renderLicenseBadge(license) {
+  if (!license || license === 'None') {
+    return ''; // Return empty string if no license is chosen
   }
-  return ''; 
+  // Return badge based on the selected license
+  return `![License](https://img.shields.io/badge/license-${license.replace(/ /g, '%20')}-brightgreen)`;
 }
 
-// Function to generate the README content
-export default function generateMarkdown(data) {
+// Function that returns the license link for the README
+// If there is no license, it returns an empty string
+function renderLicenseLink(license) {
+  if (!license || license === 'None') {
+    return ''; // Return empty string if no license is chosen
+  }
+  // Define URLs for popular licenses
+  const licenseLinks = {
+    'MIT': 'https://opensource.org/licenses/MIT',
+    'Apache 2.0': 'https://opensource.org/licenses/Apache-2.0',
+    'GPL 3.0': 'https://www.gnu.org/licenses/gpl-3.0.en.html',
+    'BSD 3-Clause': 'https://opensource.org/licenses/BSD-3-Clause'
+  };
+  return licenseLinks[license] || ''; // Return the link or empty if not found
+}
+
+// Function that returns the license section for the README
+// If there is no license, it returns an empty string
+function renderLicenseSection(license) {
+  if (!license || license === 'None') {
+    return ''; // Return empty string if no license is chosen
+  }
+  // Generate license section content
+  return `## License
+
+This project is licensed under the ${license} license. More details can be found [here](${renderLicenseLink(license)}).
+`;
+}
+
+// Main function to generate markdown content for README
+function generateMarkdown(data) {
   return `# ${data.title}
-  
-${getLicenseBadge(data.license)}
 
 ## Description
 ${data.description}
-
-### User Story
-${data.userStory}
-
-### Acceptance Criteria
-${data.acceptanceCriteria}
 
 ## Table of Contents
 - [Installation](#installation)
@@ -41,8 +58,7 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
-## License
-This project is licensed under the ${data.license} license.
+${renderLicenseSection(data.license)}
 
 ## Contributing
 ${data.contributing}
@@ -51,8 +67,13 @@ ${data.contributing}
 ${data.tests}
 
 ## Questions
-For any questions, please reach out to me at:
+For any questions, please reach out:
 - GitHub: [${data.github}](https://github.com/${data.github})
 - Email: [${data.email}](mailto:${data.email})
+
 `;
 }
+
+// Export the generateMarkdown function as the default export
+export default generateMarkdown;
+

@@ -1,15 +1,7 @@
-# xxx
-  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# azu
 
 ## Description
-brief code lucas
-
-### User Story
-undefined
-
-### Acceptance Criteria
-undefined
+juan gtz mejia
 
 ## Table of Contents
 - [Installation](#installation)
@@ -20,21 +12,24 @@ undefined
 - [Questions](#questions)
 
 ## Installation
-with luck
+javascript
 
 ## Usage
-with the hands
+play with my dogs
 
 ## License
-This project is licensed under the MIT license.
+
+This project is licensed under the MIT license. More details can be found [here](https://opensource.org/licenses/MIT).
+
 
 ## Contributing
-messing with it
+disrupting it
 
 ## Tests
-playing
+breaking it
 
 ## Questions
-For any questions, please reach out to me at:
-- GitHub: [az](https://github.com/az)
+For any questions, please reach out:
+- GitHub: [azugr](https://github.com/azugr)
 - Email: [azugr@outlook.com](mailto:azugr@outlook.com)
+

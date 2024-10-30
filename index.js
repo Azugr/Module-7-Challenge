@@ -1,24 +1,31 @@
-// Import the required packages
-import inquirer from 'inquirer';
-import * as fs from 'fs';
-import generateMarkdown from './utils/generateMarkdown.js';
-import { questions } from './utils/questions.js';
+// Import necessary packages
+import inquirer from 'inquirer'; // Package for handling user prompts
+import * as fs from 'fs'; // Node.js File System module for reading and writing files
+import generateMarkdown from './utils/generateMarkdown.js'; // Custom function to generate README content
+import { questions } from './utils/questions.js'; // Import questions array from questions.js
 
-// Prompt the user for input
-inquirer.prompt(questions).then((data) => {
-  // Use the filename provided by the user, defaulting to 'GeneratedREADME.md'
-  const filename = data.filename || 'GeneratedREADME.md';
+// Function to write the README file
+// It takes in the filename and generated markdown content as data
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) =>
+    err ? console.error(`Error writing file: ${err}`) : console.log('README.md generated successfully!')
+  );
+}
 
-  // Generate markdown content using the user's answers
-  const markdownContent = generateMarkdown(data);
+// Function to initialize the app
+// It uses inquirer to prompt the user, generates the markdown content, and writes it to a file
+function init() {
+  inquirer.prompt(questions) // Start the inquirer prompt with the questions array
+    .then((answers) => {
+      // Pass user answers to generateMarkdown to create the README content
+      const markdownContent = generateMarkdown(answers);
+      // Call writeToFile to save the generated content to README.md
+      writeToFile('README.md', markdownContent);
+    })
+    .catch((error) => {
+      console.error(`Error during inquirer prompt: ${error}`);
+    });
+}
 
-  // Write the file to the output folder
-  fs.writeFile(`./output/${filename}`, markdownContent, (err) => {
-    if (err) {
-      console.error('Error writing file:', err);
-    } else {
-      console.log(`${filename} generated successfully in the output folder!`);
-    }
-  });
-});
-
+// Start the application by calling init
+init();
