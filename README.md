@@ -1,7 +1,7 @@
-# 1
+# Professional README Generator
 
 ## Description
-1
+This application generates a professional README file for GitHub projects based on user input. It includes sections like Description, Installation, Usage, License, Contributing, Tests, and Questions.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -12,10 +12,10 @@
 - [Questions](#questions)
 
 ## Installation
-1
+Clone the repository and run `npm install` to install dependencies.
 
 ## Usage
-1
+Run `node index.js` in the terminal and follow the prompts to generate your README file.
 
 ## License
 
@@ -23,13 +23,13 @@ This project is licensed under the MIT license. More details can be found [here]
 
 
 ## Contributing
-1
+Fork the repository, create a new branch, make changes, and submit a pull request.
 
 ## Tests
-1
+Run `node index.js` and follow the prompts to see if the README file is generated successfully.
 
 ## Questions
 For any questions, please reach out:
-- GitHub: [1](https://github.com/1)
-- Email: [1](mailto:1)
+- GitHub: [Azugr](https://github.com/Azugr)
+- Email: [azugr@outlook.com](mailto:azugr@outlook.com)
 
