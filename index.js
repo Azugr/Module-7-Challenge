@@ -20,7 +20,7 @@ function init() {
       // Pass user answers to generateMarkdown to create the README content
       const markdownContent = generateMarkdown(answers);
       // Call writeToFile to save the generated content to README.md
-      writeToFile('README.md', markdownContent);
+      writeToFile('output/GeneratedREADME.md', markdownContent);
     })
     .catch((error) => {
       console.error(`Error during inquirer prompt: ${error}`);

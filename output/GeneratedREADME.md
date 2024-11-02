@@ -1,7 +1,7 @@
-# azu
+# Professional README Generator
 
 ## Description
-juan gtz mejia
+This application generates a professional README file for GitHub projects based on user input. It includes sections like Description, Installation, Usage, License, Contributing, Tests, and Questions.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -12,10 +12,10 @@ juan gtz mejia
 - [Questions](#questions)
 
 ## Installation
-javascript
+Clone the repository and run `npm install` to install dependencies.
 
 ## Usage
-play with my dogs
+Run `node index.js` in the terminal and follow the prompts to generate your README file.
 
 ## License
 
@@ -23,10 +23,10 @@ This project is licensed under the MIT license. More details can be found [here]
 
 
 ## Contributing
-disrupting it
+Fork the repository, create a new branch, make changes, and submit a pull request.
 
 ## Tests
-breaking it
+Run `node index.js` and follow the prompts to see if the README file is generated successfully.
 
 ## Questions
 For any questions, please reach out:
